@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
+	<flow name="get:\(nationalID):mss-uhub-sapi-raml-config" doc:id="d09f5f11-c454-4c5b-a28a-c3a63949d5e3" >
+		<ee:transform doc:name="Transform Message" doc:id="486c08d3-0301-4c16-a9b9-db1d95a9d455" >
+			<ee:variables >
+				<ee:set-variable variableName="nationalID" ><![CDATA[attributes.uriParams.'nationalID']]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
+		<ee:transform doc:name="Transform Message1" doc:id="798dd9f6-85c9-4970-84b8-2831fdf7d05c" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+[
+  {
+    source: "Hospital1",
+    caseID: 456464,
+    caseType: "positive",
+    firstName: "John",
+    lastName: "Nixon",
+    phone: "541-754-3010",
+    email: "john@gmail.com",
+    dateOfBirth: "1989-04-26",
+    nationalID: "209-49-6193",
+    nationalIDType: "SSN",
+    address: {
+      streetAddress: "1600 Pennsylvania Avenue NW",
+      city: "Washington",
+      state: "DC",
+      postal: "20500",
+      country: "USA"
+    }
+  }, 
+  {
+    source: "Hospital1",
+    caseID: 528293,
+    caseType: "negative",
+    firstName: "John",
+    lastName: "Nixon",
+    phone: "541-754-3010",
+    email: "john@gmail.com",
+    dateOfBirth: "1989-04-26",
+    nationalID: "209-49-6193",
+    nationalIDType: "SSN",
+    address: {
+      streetAddress: "1600 Pennsylvania Avenue NW",
+      city: "Washington",
+      state: "DC",
+      postal: "20500",
+      country: "USA"
+    }
+  }
+] as Array {encoding: "UTF-8", mediaType: "application/json"}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+
+	</mule>
