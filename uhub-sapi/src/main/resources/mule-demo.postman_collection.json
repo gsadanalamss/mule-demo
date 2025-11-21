@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "427a36b1-c08c-4cda-b57c-9357aac30de9",
+		"name": "mule-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49053178",
+		"_collection_link": "https://fun666834-1540037.postman.co/workspace/MuleSoft-AI-Chain~347eed6f-00cf-4dae-a7a8-224f64c4a165/collection/49053178-427a36b1-c08c-4cda-b57c-9357aac30de9?action=share&source=collection_link&creator=49053178"
+	},
+	"item": [
+		{
+			"name": "Insert Cases",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "x-correlation-id",
+						"value": "7474774",
+						"type": "text"
+					},
+					{
+						"key": "x-transaction-id",
+						"value": "74a2d61f-a3cb-4b1b-9e97-767236ee0620",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"source\": \"Hospital1\",\r\n  \"caseType\": \"positive\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Nixon\",\r\n  \"phone\": \"541-754-3010\",\r\n  \"email\": \"john@gmail.com\",\r\n  \"dateOfBirth\": \"1989-04-26\",\r\n  \"nationalID\": \"209-49-6193\",\r\n  \"nationalIDType\": \"SSN\",\r\n  \"address\": {\r\n    \"streetAddress\": \"1600 Pennsylvania Avenue NW\",\r\n    \"city\": \"Dallas\",\r\n    \"state\": \"TX\",\r\n    \"postal\": \"20500\",\r\n    \"country\": \"USA\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/covid/api/v1/cases",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"covid",
+						"api",
+						"v1",
+						"cases"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "x-correlation-id",
+								"value": "7474774",
+								"type": "text"
+							},
+							{
+								"key": "x-transaction-id",
+								"value": "74a2d61f-a3cb-4b1b-9e97-767236ee0620",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"source\": \"Hospital1\",\r\n  \"caseType\": \"positive\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Nixon\",\r\n  \"phone\": \"541-754-3010\",\r\n  \"email\": \"john@gmail.com\",\r\n  \"dateOfBirth\": \"1989-04-26\",\r\n  \"nationalID\": \"209-49-6193\",\r\n  \"nationalIDType\": \"SSN\",\r\n  \"address\": {\r\n    \"streetAddress\": \"1600 Pennsylvania Avenue NW\",\r\n    \"city\": \"Dallas\",\r\n    \"state\": \"TX\",\r\n    \"postal\": \"20500\",\r\n    \"country\": \"USA\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/cases",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"cases"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "24"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 11:31:28 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"caseID\": \"672322\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Cases",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\r\n<covidCase>\r\n  <caseID>7</caseID>\r\n  <source>Hospital1</source>\r\n  <caseType>vaccinated</caseType>\r\n  <firstName>John</firstName>\r\n  <lastName>Nixon</lastName>\r\n  <phone>541-754-3012</phone>\r\n  <email>john@gmail.com</email>\r\n  <dateOfBirth>1989-04-26</dateOfBirth>\r\n  <nationalID>209-49-6193</nationalID>\r\n  <nationalIDType>SSN</nationalIDType>\r\n  <address>\r\n    <streetAddress>1600 Pennsylvania Avenue NW</streetAddress>\r\n    <city>Washington</city>\r\n    <state>DC</state>\r\n    <postal>20500</postal>\r\n    <country>USA</country>\r\n  </address>\r\n</covidCase>            \r\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/covid/api/v1/cases",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"covid",
+						"api",
+						"v1",
+						"cases"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\r\n<covidCase>\r\n  <caseID>7</caseID>\r\n  <source>Hospital1</source>\r\n  <caseType>vaccinated</caseType>\r\n  <firstName>John</firstName>\r\n  <lastName>Nixon</lastName>\r\n  <phone>541-754-3012</phone>\r\n  <email>john@gmail.com</email>\r\n  <dateOfBirth>1989-04-26</dateOfBirth>\r\n  <nationalID>209-49-6193</nationalID>\r\n  <nationalIDType>SSN</nationalIDType>\r\n  <address>\r\n    <streetAddress>1600 Pennsylvania Avenue NW</streetAddress>\r\n    <city>Washington</city>\r\n    <state>DC</state>\r\n    <postal>20500</postal>\r\n    <country>USA</country>\r\n  </address>\r\n</covidCase>            \r\n",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/covid/api/v1/cases",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"covid",
+								"api",
+								"v1",
+								"cases"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/xml; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "82"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 11:35:09 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "<?xml version='1.0' encoding='UTF-8'?>\n<response>\n    <caseID>7</caseID>\n</response>"
+				}
+			]
+		},
+		{
+			"name": "Get Records by nation ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/covid/api/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"covid",
+						"api",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/covid/api/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"covid",
+								"api",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "932"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 11:36:47 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"source\": \"Hospital1\",\n        \"caseID\": 456464,\n        \"caseType\": \"positive\",\n        \"firstName\": \"John\",\n        \"lastName\": \"Nixon\",\n        \"phone\": \"541-754-3010\",\n        \"email\": \"john@gmail.com\",\n        \"dateOfBirth\": \"1989-04-26\",\n        \"nationalID\": \"209-49-6193\",\n        \"nationalIDType\": \"SSN\",\n        \"address\": {\n            \"streetAddress\": \"1600 Pennsylvania Avenue NW\",\n            \"city\": \"Washington\",\n            \"state\": \"DC\",\n            \"postal\": \"20500\",\n            \"country\": \"USA\"\n        }\n    },\n    {\n        \"source\": \"Hospital1\",\n        \"caseID\": 528293,\n        \"caseType\": \"negative\",\n        \"firstName\": \"John\",\n        \"lastName\": \"Nixon\",\n        \"phone\": \"541-754-3010\",\n        \"email\": \"john@gmail.com\",\n        \"dateOfBirth\": \"1989-04-26\",\n        \"nationalID\": \"209-49-6193\",\n        \"nationalIDType\": \"SSN\",\n        \"address\": {\n            \"streetAddress\": \"1600 Pennsylvania Avenue NW\",\n            \"city\": \"Washington\",\n            \"state\": \"DC\",\n            \"postal\": \"20500\",\n            \"country\": \"USA\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Records",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/covid/api/reports",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"covid",
+						"api",
+						"reports"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/covid/api/reports",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"covid",
+								"api",
+								"reports"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "178"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 11:37:56 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"state\": \"texas\",\n        \"report\": {\n            \"total\": 46744,\n            \"positive\": 436744,\n            \"recovered\": 433744,\n            \"death\": 300,\n            \"vaccinated\": 7847848\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/covid/api/health-check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"covid",
+						"api",
+						"health-check"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/covid/api/health-check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"covid",
+								"api",
+								"health-check"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "932"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 21 Nov 2025 17:18:21 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"source\": \"Hospital1\",\n        \"caseID\": 456464,\n        \"caseType\": \"positive\",\n        \"firstName\": \"John\",\n        \"lastName\": \"Nixon\",\n        \"phone\": \"541-754-3010\",\n        \"email\": \"john@gmail.com\",\n        \"dateOfBirth\": \"1989-04-26\",\n        \"nationalID\": \"209-49-6193\",\n        \"nationalIDType\": \"SSN\",\n        \"address\": {\n            \"streetAddress\": \"1600 Pennsylvania Avenue NW\",\n            \"city\": \"Washington\",\n            \"state\": \"DC\",\n            \"postal\": \"20500\",\n            \"country\": \"USA\"\n        }\n    },\n    {\n        \"source\": \"Hospital1\",\n        \"caseID\": 528293,\n        \"caseType\": \"negative\",\n        \"firstName\": \"John\",\n        \"lastName\": \"Nixon\",\n        \"phone\": \"541-754-3010\",\n        \"email\": \"john@gmail.com\",\n        \"dateOfBirth\": \"1989-04-26\",\n        \"nationalID\": \"209-49-6193\",\n        \"nationalIDType\": \"SSN\",\n        \"address\": {\n            \"streetAddress\": \"1600 Pennsylvania Avenue NW\",\n            \"city\": \"Washington\",\n            \"state\": \"DC\",\n            \"postal\": \"20500\",\n            \"country\": \"USA\"\n        }\n    }\n]"
+				}
+			]
+		}
+	]
+}
