@@ -10,4 +10,5 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<os:config name="ObjectStore_Config1" doc:name="ObjectStore Config" doc:id="d7fd4d9c-78a5-41ed-89a9-88bcdbebff31" />
+	<api-gateway:autodiscovery apiId="20613968" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="64841a0c-80a3-4c09-9b08-368196deaf2a" flowRef="mss-uhub-sapi-raml-main" />
 </mule>

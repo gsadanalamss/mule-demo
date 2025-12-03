@@ -2,6 +2,5 @@
   "minMuleVersion": "4.10.0",
   "javaSpecificationVersions": [
     "17"
-  ],
-  "api.id": "20613968"
+  ]
 }
